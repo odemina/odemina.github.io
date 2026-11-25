@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>糖芯 - 甜蜜影像社区,记录每一份柔软时刻</title>
+<meta name="description" content="糖芯是面向生活创作者的视频影像品牌与社区,用柔软、真诚的镜头记录甜蜜日常,让每一份微小的美好都被看见。">
+<style>
+:root{
+  --pink:#ff7aa2;
+  --pink-deep:#e8578a;
+  --peach:#ffb7a5;
+  --cream:#fff6f1;
+  --ink:#3a2b32;
+  --ink-soft:#6b5560;
+  --line:#f2d8de;
+  --mint:#8fd8c8;
+  --sun:#ffd166;
+  --lav:#b8a7e8;
+  --shadow:0 18px 50px rgba(214,110,140,.16);
+  --radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.85;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:min(1180px,92vw);margin:0 auto}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;letter-spacing:.22em;font-weight:600;
+  color:var(--pink-deep);text-transform:uppercase;
+  padding:6px 14px;border-radius:999px;background:rgba(255,122,162,.12);
+}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--pink)}
+h2{font-size:clamp(26px,3.4vw,40px);line-height:1.3;letter-spacing:-.01em}
+h3{font-size:19px;line-height:1.5}
+p{color:var(--ink-soft)}
+.sec{padding:96px 0;position:relative}
+.sec-head{max-width:720px;margin-bottom:52px}
+.sec-head p{margin-top:16px;font-size:16.5px}
+
+/* ===== 顶部导航 ===== */
+header{
+  position:fixed;inset:0 0 auto 0;z-index:100;
+  backdrop-filter:blur(18px);
+  background:rgba(255,246,241,.78);
+  border-bottom:1px solid transparent;
+  transition:.35s ease;
+}
+header.scrolled{background:rgba(255,246,241,.94);border-bottom-color:var(--line);box-shadow:0 8px 30px rgba(210,120,150,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px;letter-spacing:.02em}
+.brand .mark{
+  width:40px;height:40px;border-radius:14px;
+  background:linear-gradient(135deg,var(--pink),var(--peach));
+  display:grid;place-items:center;box-shadow:0 8px 20px rgba(255,110,150,.35);
+}
+.brand .mark svg{width:22px;height:22px}
+.nav-links{display:flex;gap:30px;font-size:14.5px;font-weight:500;color:var(--ink-soft)}
+.nav-links a{position:relative;padding:4px 0;transition:.25s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--pink);border-radius:2px;transition:.3s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;gap:12px;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:11px 22px;border-radius:999px;font-size:14.5px;font-weight:600;
+  border:1px solid transparent;cursor:pointer;transition:.3s;white-space:nowrap;
+}
+.btn-primary{background:linear-gradient(135deg,var(--pink),var(--pink-deep));color:#fff;box-shadow:0 12px 26px rgba(232,87,138,.32)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 34px rgba(232,87,138,.4)}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--pink);color:var(--pink-deep);transform:translateY(-2px)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;border-radius:2px;transition:.3s}
+
+/* ===== Hero ===== */
+.hero{position:relative;padding:150px 0 100px;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;width:640px;height:640px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,183,165,.42),transparent 68%);
+  top:-220px;right:-180px;filter:blur(10px);
+}
+.hero::after{
+  content:"";position:absolute;width:480px;height:480px;border-radius:50%;
+  background:radial-gradient(circle,rgba(184,167,232,.3),transparent 70%);
+  bottom:-200px;left:-160px;
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;position:relative;z-index:2}
+h1{
+  font-size:clamp(42px,6.2vw,76px);
+  line-height:1.08;letter-spacing:-.03em;font-weight:800;
+  background:linear-gradient(120deg,#3a2b32 30%,var(--pink-deep) 78%,var(--peach));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin:20px 0 8px;
+}
+.hero-sub{font-size:clamp(17px,1.8vw,21px);color:var(--ink-soft);max-width:520px;margin-top:14px}
+.hero-desc{margin-top:20px;font-size:15.5px;max-width:500px}
+.hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:38px;margin-top:46px;flex-wrap:wrap}
+.stat b{display:block;font-size:29px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.stat span{font-size:13px;color:var(--ink-soft);letter-spacing:.03em}
+
+/* hero visual */
+.hero-visual{position:relative;min-height:440px}
+.reel{
+  position:absolute;inset:0;border-radius:32px;overflow:hidden;
+  background:linear-gradient(160deg,#fff,#ffeef2);
+  box-shadow:var(--shadow);border:1px solid #fff;
+}
+.reel video,.reel .ph{width:100%;height:100%;object-fit:cover}
+.reel .ph{position:absolute;inset:0}
+.reel-badge{
+  position:absolute;left:18px;bottom:18px;z-index:3;
+  display:flex;align-items:center;gap:9px;
+  background:rgba(255,255,255,.9);backdrop-filter:blur(8px);
+  padding:9px 16px;border-radius:999px;font-size:13px;font-weight:600;
+  box-shadow:0 8px 20px rgba(200,120,150,.18);
+}
+.pulse{width:8px;height:8px;border-radius:50%;background:#ff4d6d;box-shadow:0 0 0 0 rgba(255,77,109,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(255,77,109,0)}100%{box-shadow:0 0 0 0 rgba(255,77,109,0)}}
+.float-card{
+  position:absolute;z-index:4;background:#fff;border-radius:18px;padding:14px 18px;
+  box-shadow:0 16px 40px rgba(200,120,150,.2);font-size:13px;
+  animation:float 6s ease-in-out infinite;
+}
+.float-card b{display:block;font-size:17px;color:var(--ink)}
+.fc-1{top:26px;right:-26px;animation-delay:.5s}
+.fc-2{bottom:64px;left:-30px;animation-delay:1.6s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* ===== 跑马灯 ===== */
+.marquee{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:#fff;overflow:hidden;padding:18px 0;
+}
+.marquee-track{display:flex;gap:52px;width:max-content;animation:slide 32s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.marquee span{font-size:14px;font-weight:600;letter-spacing:.14em;color:var(--ink-soft);display:flex;align-items:center;gap:52px;white-space:nowrap}
+.marquee span::after{content:"✦";color:var(--pink);font-size:12px}
+
+/* ===== 品牌理念 ===== */
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:center}
+.about-art{position:relative;border-radius:28px;overflow:hidden;background:linear-gradient(150deg,#ffe3ea,#fff1e6);min-height:400px;box-shadow:var(--shadow)}
+.about-art .rings{position:absolute;inset:0}
+.value-list{display:grid;gap:22px;margin-top:34px}
+.value-item{display:flex;gap:18px;padding:20px;border-radius:18px;background:#fff;border:1px solid var(--line);transition:.35s}
+.value-item:hover{transform:translateX(6px);box-shadow:0 14px 32px rgba(210,130,160,.13);border-color:#ffd4de}
+.v-ico{flex:0 0 46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(255,122,162,.14)}
+.v-ico svg{width:23px;height:23px;stroke:var(--pink-deep);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.value-item h3{font-size:16.5px;margin-bottom:4px}
+.value-item p{font-size:14px;line-height:1.7}
+
+/* ===== 精选作品 ===== */
+.works{background:linear-gradient(180deg,#fff,#fff6f1)}
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.work-card{
+  border-radius:24px;overflow:hidden;background:#fff;border:1px solid var(--line);
+  transition:.4s cubic-bezier(.2,.7,.3,1);cursor:pointer;position:relative;
+}
+.work-card:hover{transform:translateY(-8px);box-shadow:0 26px 54px rgba(210,120,150,.2);border-color:#ffd4de}
+.thumb{position:relative;aspect-ratio:16/10;overflow:hidden}
+.thumb svg{width:100%;height:100%}
+.thumb .play{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:rgba(58,43,50,.18);opacity:0;transition:.35s;
+}
+.work-card:hover .play{opacity:1}
+.play-btn{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.94);display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.2);transform:scale(.86);transition:.35s}
+.work-card:hover .play-btn{transform:scale(1)}
+.play-btn svg{width:20px;height:20px;fill:var(--pink-deep);margin-left:2px}
+.work-info{padding:20px 22px 24px}
+.tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.08em;padding:4px 11px;border-radius:999px;background:rgba(255,122,162,.13);color:var(--pink-deep);margin-bottom:10px}
+.work-info h3{font-size:17px;margin-bottom:6px}
+.work-info p{font-size:13.5px;line-height:1.7}
+.work-meta{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:12.5px;color:#9b8890}
+.work-meta .dur{display:flex;align-items:center;gap:5px}
+
+/* ===== 栏目 / 频道 ===== */
+.channels{background:var(--ink);color:#fff;overflow:hidden;position:relative}
+.channels::before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(255,122,162,.28),transparent 70%);top:-240px;right:-140px}
+.channels h2{color:#fff}
+.channels .sec-head p{color:rgba(255,255,255,.66)}
+.ch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;z-index:2}
+.ch-card{
+  border-radius:20px;padding:28px 24px;background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.1);transition:.35s;backdrop-filter:blur(4px);
+}
+.ch-card:hover{background:rgba(255,255,255,.1);transform:translateY(-6px);border-color:rgba(255,122,162,.5)}
+.ch-card .num{font-size:12px;letter-spacing:.2em;color:var(--pink);font-weight:700}
+.ch-card h3{color:#fff;margin:14px 0 8px;font-size:17.5px}
+.ch-card p{color:rgba(255,255,255,.6);font-size:13.5px;line-height:1.75}
+.ch-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.ch-tags i{font-style:normal;font-size:11px;padding:3px 9px;border-radius:999px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.7)}
+
+/* ===== 创作者 ===== */
+.creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.creator{
+  background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 20px;text-align:center;
+  transition:.35s;
+}
+.creator:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(210,120,150,.16);border-color:#ffd4de}
+.avatar{width:74px;height:74px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;font-size:26px;font-weight:800;color:#fff;box-shadow:0 10px 24px rgba(220,110,145,.28)}
+.creator h3{font-size:16px}
+.creator .role{font-size:12.5px;color:var(--pink-deep);font-weight:600;margin:3px 0 10px}
+.creator p{font-size:13px;line-height:1.7}
+.creator .follow{display:inline-block;margin-top:14px;font-size:12.5px;font-weight:600;padding:7px 18px;border-radius:999px;border:1px solid var(--line);color:var(--ink);transition:.25s}
+.creator:hover .follow{background:var(--pink);border-color:var(--pink);color:#fff}
+
+/* ===== 数据 ===== */
+.metrics{padding:0}
+.metric-band{
+  background:linear-gradient(120deg,var(--pink),var(--pink-deep) 60%,#d2437a);
+  border-radius:32px;padding:56px 40px;color:#fff;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;
+  box-shadow:0 30px 70px rgba(232,87,138,.3);position:relative;overflow:hidden;
+}
+.metric-band::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.13);right:-140px;bottom:-200px}
+.metric{position:relative;z-index:2;text-align:center}
+.metric b{display:block;font-size:clamp(30px,4vw,44px);font-weight:800;letter-spacing:-.02em}
+.metric span{font-size:13.5px;opacity:.86;letter-spacing:.05em}
+
+/* ===== 时间线 ===== */
+.timeline{position:relative;margin-top:20px}
+.timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(180deg,transparent,var(--line) 12%,var(--line) 88%,transparent);transform:translateX(-50%)}
+.tl-item{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-bottom:44px;position:relative}
+.tl-item:nth-child(odd) .tl-content{grid-column:1;text-align:right}
+.tl-item:nth-child(odd) .tl-empty{grid-column:2}
+.tl-item:nth-child(even) .tl-content{grid-column:2}
+.tl-item:nth-child(even) .tl-empty{grid-column:1;grid-row:1}
+.tl-dot{position:absolute;left:50%;top:24px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--pink);transform:translateX(-50%);box-shadow:0 0 0 5px rgba(255,122,162,.15)}
+.tl-content{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 26px;transition:.35s}
+.tl-content:hover{box-shadow:0 18px 40px rgba(210,120,150,.15);border-color:#ffd4de}
+.tl-year{font-size:12.5px;font-weight:800;letter-spacing:.16em;color:var(--pink-deep)}
+.tl-content h3{font-size:17px;margin:8px 0 6px}
+.tl-content p{font-size:13.8px;line-height:1.75}
+
+/* ===== 社群 / 加入 ===== */
+.join{background:linear-gradient(180deg,#fff6f1,#ffeef2)}
+.join-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.join-art{position:relative;border-radius:28px;overflow:hidden;background:linear-gradient(150deg,#e6f6f2,#ffe9ee);min-height:380px;box-shadow:var(--shadow);display:grid;place-items:center}
+.join-art svg{width:78%}
+.join-list{list-style:none;margin-top:28px;display:grid;gap:14px}
+.join-list li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:var(--ink-soft)}
+.check{flex:0 0 22px;height:22px;border-radius:50%;background:rgba(143,216,200,.3);display:grid;place-items:center;margin-top:3px}
+.check svg{width:12px;height:12px;stroke:#2e9c86;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ===== 常见问题 ===== */
+.faq{max-width:820px;margin:0 auto}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:14px;overflow:hidden;transition:.3s}
+.faq-item.open{border-color:#ffd4de;box-shadow:0 14px 34px rgba(210,120,150,.12)}
+.faq-q{width:100%;text-align:left;background:none;border:none;padding:20px 24px;font-size:15.5px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:inherit}
+.faq-q .ic{flex:0 0 26px;height:26px;border-radius:50%;background:rgba(255,122,162,.13);display:grid;place-items:center;transition:.3s}
+.faq-q .ic::before{content:"";width:9px;height:9px;border-right:2px solid var(--pink-deep);border-bottom:2px solid var(--pink-deep);transform:rotate(45deg) translate(-2px,-2px)}
+.faq-item.open .faq-q .ic{transform:rotate(180deg);background:var(--pink)}
+.faq-item.open .faq-q .ic::before{border-color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-a p{padding:0 24px 22px;font-size:14px;line-height:1.85}
+
+/* ===== CTA ===== */
+.cta{padding:100px 0}
+.cta-box{
+  border-radius:34px;padding:70px 40px;text-align:center;position:relative;overflow:hidden;
+  background:linear-gradient(140deg,#ffe4ec,#fff4e8 55%,#e9f7f3);
+  border:1px solid #fff;box-shadow:var(--shadow);
+}
+.cta-box::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(255,122,162,.18);top:-140px;left:-100px}
+.cta-box::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(143,216,200,.2);bottom:-150px;right:-80px}
+.cta-box h2{position:relative;z-index:2}
+.cta-box p{position:relative;z-index:2;max-width:540px;margin:16px auto 0;font-size:15.5px}
+.cta-actions{position:relative;z-index:2;display:flex;gap:14px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+
+/* ===== 页脚 ===== */
+footer{background:var(--ink);color:rgba(255,255,255,.72);padding:70px 0 30px;position:relative}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.12)}
+.foot-brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px;color:#fff;margin-bottom:16px}
+.foot-brand .mark{width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,var(--pink),var(--peach));display:grid;place-items:center}
+.foot-brand .mark svg{width:21px;height:21px}
+footer p{color:rgba(255,255,255,.55);font-size:13.5px;line-height:1.8}
+.foot-col h4{color:#fff;font-size:14px;margin-bottom:16px;letter-spacing:.05em}
+.foot-col a{display:block;font-size:13.5px;color:rgba(255,255,255,.58);margin-bottom:11px;transition:.25s}
+.foot-col a:hover{color:var(--pink)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;flex-wrap:wrap;gap:14px;font-size:12.5px;color:rgba(255,255,255,.42)}
+.socials{display:flex;gap:10px}
+.socials a{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.08);display:grid;place-items:center;transition:.3s}
+.socials a:hover{background:var(--pink)}
+.socials svg{width:15px;height:15px;fill:#fff}
+
+/* ===== 滚动动画 ===== */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ===== 响应式 ===== */
+@media(max-width:1000px){
+  .hero-grid,.about-grid,.join-grid{grid-template-columns:1fr;gap:44px}
+  .hero-visual{min-height:360px;order:-1}
+  .work-grid{grid-template-columns:repeat(2,1fr)}
+  .ch-grid{grid-template-columns:repeat(2,1fr)}
+  .creator-grid{grid-template-columns:repeat(2,1fr)}
+  .metric-band{grid-template-columns:repeat(2,1fr);padding:44px 26px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .nav-links{display:none}
+  .nav-cta .btn-ghost{display:none}
+  .menu-btn{display:block}
+  .sec{padding:70px 0}
+  .work-grid,.ch-grid,.creator-grid{grid-template-columns:1fr}
+  .timeline::before{left:14px}
+  .tl-item{grid-template-columns:1fr;gap:0;padding-left:44px;margin-bottom:24px}
+  .tl-item .tl-content,.tl-item:nth-child(odd) .tl-content,.tl-item:nth-child(even) .tl-content{grid-column:1;text-align:left}
+  .tl-empty{display:none}
+  .tl-dot{left:14px;top:26px}
+  .fc-1{right:6px;top:10px}
+  .fc-2{left:6px;bottom:10px}
+  .metric-band{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .hero-stats{gap:24px}
+  .stat b{font-size:24px}
+  .cta-box{padding:50px 22px}
+  .hero{padding:120px 0 70px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="wrap nav">
+    <a href="#" class="brand">
+      <span class="mark">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M4 8.5A3.5 3.5 0 0 1 7.5 5h9A3.5 3.5 0 0 1 20 8.5v7A3.5 3.5 0 0 1 16.5 19h-9A3.5 3.5 0 0 1 4 15.5v-7Z" stroke="#fff" stroke-width="1.8"/>
+          <path d="M9.5 9.6v5.8l5-2.9-5-2.9Z" fill="#fff"/>
+        </svg>
+      </span>
+      糖芯
+    </a>
+    <nav class="nav-links">
+      <a href="#about">关于糖芯</a>
+      <a href="#works">精选作品</a>
+      <a href="#channels">内容频道</a>
+      <a href="#creators">创作者</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#join" class="btn btn-ghost">登录</a>
+      <a href="#join" class="btn btn-primary">进入糖芯</a>
+      <button class="menu-btn" aria-label="打开菜单" id="menuBtn"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Sweet Frame · 甜蜜影像</span>
+      <h1>糖芯</h1>
+      <p class="hero-sub">把生活的柔软，装进每一帧画面里。</p>
+      <p class="hero-desc">糖芯是一个面向生活创作者的视频品牌与影像社区。我们相信，最动人的镜头往往来自那些不经意的、甜甜的、被认真对待的瞬间。在这里，你既可以找到灵感，也可以被温柔地看见。</p>
+      <div class="hero-actions">
+        <a href="#works" class="btn btn-primary">
+          浏览精选作品
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h13m0 0-5-5m5 5-5 5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#join" class="btn btn-ghost">加入创作者计划</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>2,800+</b><span>原创影像作品</span></div>
+        <div class="stat"><b>36万</b><span>社区创作者</span></div>
+        <div class="stat"><b>4.9 / 5</b><span>创作者满意度</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="reel">
+        <svg class="ph" viewBox="0 0 640 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="hg1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffe0e8"/>
+              <stop offset=".55" stop-color="#ffc7d6"/>
+              <stop offset="1" stop-color="#ffd8c2"/>
+            </linearGradient>
+            <linearGradient id="hg2" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stop-color="#b8a7e8" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#ff9dbf" stop-opacity=".2"/>
+            </linearGradient>
+          </defs>
+          <rect width="640" height="480" fill="url(#hg1)"/>
+          <circle cx="470" cy="150" r="120" fill="#fff" opacity=".45"/>
+          <circle cx="470" cy="150" r="88" fill="#fff" opacity=".5"/>
+          <circle cx="470" cy="150" r="52" fill="#ffd6e0"/>
+          <path d="M0 360 Q160 280 320 340 T640 320 V480 H0Z" fill="url(#hg2)"/>
+          <path d="M0 400 Q180 350 340 396 T640 376 V480 H0Z" fill="#fff" opacity=".35"/>
+          <g opacity=".85">
+            <rect x="70" y="86" width="180" height="120" rx="18" fill="#fff" opacity=".7"/>
+            <circle cx="112" cy="130" r="16" fill="#ffb7a5"/>
+            <rect x="140" y="120" width="82" height="9" rx="4.5" fill="#ffd0da"/>
+            <rect x="140" y="137" width="56" height="8" rx="4" fill="#ffe0e5"/>
+            <rect x="96" y="166" width="126" height="8" rx="4" fill="#ffe0e5"/>
+            <rect x="96" y="182" width="90" height="8" rx="4" fill="#ffeaf0"/>
+          </g>
+          <g opacity=".9">
+            <rect x="380" y="286" width="196" height="118" rx="20" fill="#fff" opacity=".78"/>
+            <circle cx="420" cy="326" r="14" fill="#8fd8c8"/>
+            <rect x="446" y="318" width="98" height="9" rx="4.5" fill="#ffd0da"/>
+            <rect x="446" y="335" width="66" height="8" rx="4" fill="#ffe0e5"/>
+            <rect x="404" y="362" width="146" height="8" rx="4" fill="#ffe0e5"/>
+            <rect x="404" y="378" width="108" height="8" rx="4" fill="#ffeaf0"/>
+          </g>
+          <g fill="#fff" opacity=".7">
+            <circle cx="120" cy="290" r="4"/>
+            <circle cx="160" cy="260" r="2.5"/>
+            <circle cx="320" cy="120" r="3"/>
+            <circle cx="590" cy="240" r="4"/>
+            <circle cx="240" cy="200" r="2.5"/>
+          </g>
+        </svg>
+        <div class="reel-badge"><span class="pulse"></span>糖芯 Live · 正在记录中</div>
+      </div>
+      <div class="float-card fc-1"><b>∞ 甜蜜灵感</b>每周更新影像灵感库</div>
+      <div class="float-card fc-2"><b>创作者友好</b>收益 100% 透明可查</div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>生活记录</span><span>美食短片</span><span>手作日常</span><span>城市漫游</span><span>宠物时光</span><span>旅行纪事</span><span>情绪短片</span><span>独立音乐</span>
+    <span>生活记录</span><span>美食短片</span><span>手作日常</span><span>城市漫游</span><span>宠物时光</span><span>旅行纪事</span><span>情绪短片</span><span>独立音乐</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="wrap about-grid">
+    <div class="about-art reveal">
+      <svg class="rings" viewBox="0 0 560 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <radialGradient id="ag1" cx=".4" cy=".35" r=".8">
+            <stop offset="0" stop-color="#fff" stop-opacity=".9"/>
+            <stop offset="1" stop-color="#ffd8e2" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="560" height="520" fill="url(#ag1)"/>
+        <circle cx="280" cy="260" r="200" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.4"/>
+        <circle cx="280" cy="260" r="158" fill="none" stroke="#ffd0da" stroke-width="1.4"/>
+        <circle cx="280" cy="260" r="114" fill="none" stroke="#fff" stroke-width="1.4"/>
+        <circle cx="280" cy="260" r="70" fill="#ffc2d2" opacity=".7"/>
+        <circle cx="280" cy="260" r="46" fill="#fff"/>
+        <path d="M262 246v28l24-14-24-14Z" fill="#e8578a"/>
+        <g stroke="#ffb7a5" stroke-width="2" stroke-linecap="round" opacity=".8">
+          <path d="M80 100 v26 M67 113 h26"/>
+          <path d="M472 92 v20 M462 102 h20"/>
+          <path d="M96 420 v20 M86 430 h20"/>
+          <path d="M462 408 v26 M449 421 h26"/>
+        </g>
+        <g fill="#b8a7e8" opacity=".55">
+          <circle cx="404" cy="120" r="6"/>
+          <circle cx="150" cy="386" r="5"/>
+          <circle cx="430" cy="330" r="4"/>
+        </g>
+      </svg>
+    </div>
+    <div>
+      <span class="eyebrow reveal">关于糖芯</span>
+      <h2 class="reveal" style="margin-top:16px">甜，是一种认真对待生活的方式</h2>
+      <p class="reveal" style="margin-top:18px;font-size:15.5px">糖芯诞生于一个简单的念头：在被算法与速度填满的屏幕里，能不能有一块地方，让温柔的画面被耐心地看完？我们选择以"糖"为名，是因为它柔软、包容，又能在细节里带来确定的愉悦。</p>
+      <div class="value-list">
+        <div class="value-item reveal">
+          <span class="v-ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/></svg></span>
+          <div><h3>真实的温度</h3><p>不追求夸张滤镜与戏剧冲突，只呈现创作者真实的情绪与生活质地。</p></div>
+        </div>
+        <div class="value-item reveal">
+          <span class="v-ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3V9Z"/></svg></span>
+          <div><h3>影像的耐心</h3><p>从脚本到成片提供全流程支持，帮每一个普通故事被稳稳地讲完。</p></div>
+        </div>
+        <div class="value-item reveal">
+          <span class="v-ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M17 7a3 3 0 0 1 0 6"/><path d="M18 20c0-2.2-.9-4.1-2.3-5.4"/></svg></span>
+          <div><h3>社区的共生</h3><p>创作者、观众与品牌方在同一张桌子上，分享、合作、共同成长。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section class="sec works" id="works">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">精选作品</span>
+      <h2 style="margin-top:16px">最近，糖芯上被反复观看的六支短片</h2>
+      <p>它们来自不同的城市、不同的镜头，却共享同一种柔软的语气。每一支都值得你多停留三十秒。</p>
+    </div>
+    <div class="work-grid" id="workGrid">
+      <!-- cards injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- CHANNELS -->
+<section class="sec channels" id="channels">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" style="background:rgba(255,122,162,.2)">内容频道</span>
+      <h2 style="margin-top:16px">四个频道，四种被认真记录的甜</h2>
+      <p>糖芯的每个频道都由编辑部与社区共同策展，既保证审美的稳定，也保留开放的表达空间。</p>
+    </div>
+    <div class="ch-grid">
+      <div class="ch-card reveal">
+        <span class="num">01</span>
+        <h3>日常切片</h3>
+        <p>用一镜到底或极简剪辑，记录一天里最值得留下的十分钟。</p>
+        <div class="ch-tags"><i>vlog</i><i>生活</i><i>慢节奏</i></div>
+      </div>
+      <div class="ch-card reveal">
+        <span class="num">02</span>
+        <h3>厨房手记</h3>
+        <p>从备菜到收尾，让食物的声响与温度成为短片的主角。</p>
+        <div class="ch-tags"><i>美食</i><i>手作</i><i>ASMR</i></div>
+      </div>
+      <div class="ch-card reveal">
+        <span class="num">03</span>
+        <h3>城市漫游</h3>
+        <p>走进街角与巷尾，用脚步和镜头重新认识熟悉的城市。</p>
+        <div class="ch-tags"><i>城市</i><i>旅行</i><i>人文</i></div>
+      </div>
+      <div class="ch-card reveal">
+        <span class="num">04</span>
+        <h3>情绪短片</h3>
+        <p>给那些说不清的心情一个容器，用画面替代语言。</p>
+        <div class="ch-tags"><i>叙事</i><i>音乐</i><i>实验</i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="sec metrics">
+  <div class="wrap">
+    <div class="metric-band reveal">
+      <div class="metric"><b>2,800+</b><span>原创影像作品</span></div>
+      <div class="metric"><b>1,200 万</b><span>年度播放量</span></div>
+      <div class="metric"><b>36 万</b><span>社区创作者</span></div>
+      <div class="metric"><b>97%</b><span>作品完播率</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CREATORS -->
+<section class="sec" id="creators">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">创作者</span>
+      <h2 style="margin-top:16px">糖芯背后，是一群把日子过成影片的人</h2>
+      <p>他们来自不同行业，却都相信画面能替语言说出更多。欢迎认识其中几位长期的糖芯伙伴。</p>
+    </div>
+    <div class="creator-grid">
+      <div class="creator reveal">
+        <div class="avatar" style="background:linear-gradient(135deg,#ff9dbf,#e8578a)">林</div>
+        <h3>林小满</h3>
+        <div class="role">生活影像 / 杭州</div>
+        <p>擅长用自然光记录慢生活，作品被称作"可以闻到时令气息的短片"。</p>
+        <span class="follow">关注</span>
+      </div>
+      <div class="creator reveal">
+        <div class="avatar" style="background:linear-gradient(135deg,#8fd8c8,#3fae99)">周</div>
+        <h3>周予安</h3>
+        <div class="role">美食短片 / 成都</div>
+        <p>把厨房当作片场，用极简的分镜讲清一道家常菜的全部温柔。</p>
+        <span class="follow">关注</span>
+      </div>
+      <div class="creator reveal">
+        <div class="avatar" style="background:linear-gradient(135deg,#b8a7e8,#7a63c9)">顾</div>
+        <h3>顾一川</h3>
+        <div class="role">城市漫游 / 上海</div>
+        <p>十年城市纪录片经验，偏爱在清晨与雨天拍摄那些安静的街道。</p>
+        <span class="follow">关注</span>
+      </div>
+      <div class="creator reveal">
+        <div class="avatar" style="background:linear-gradient(135deg,#ffd166,#f0a500)">苏</div>
+        <h3>苏念</h3>
+        <div class="role">情绪短片 / 广州</div>
+        <p>以音乐与画面连接情绪，短片常被观众用作睡前的自我安放。</p>
+        <span class="follow">关注</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="sec" style="background:linear-gradient(180deg,#fff,#fff6f1)">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:640px">
+      <span class="eyebrow">糖芯历程</span>
+      <h2 style="margin-top:16px">从一间小工作室，到一群人的影像社区</h2>
+      <p>我们把每一次的成长，都切成小小的糖块，分给陪我们走过的人。</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-year">2019 · 起点</span>
+          <h3>糖芯工作室成立</h3>
+          <p>三个人、两台相机，在杭州一间老房子的阳台上，拍下了第一支关于初夏的短片。</p>
+        </div>
+        <div class="tl-empty"></div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-year">2021 · 生长</span>
+          <h3>糖芯社区上线</h3>
+          <p>从工作室走向社区，首批 200 位创作者加入，确立了"真实、柔软、有耐心"的内容标准。</p>
+        </div>
+        <div class="tl-empty"></div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-year">2023 · 连接</span>
+          <h3>创作者共创计划</h3>
+          <p>与 60 余个生活方式品牌展开共创，让好作品得到体面的回报，也让合作变得透明。</p>
+        </div>
+        <div class="tl-empty"></div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-year">2025 · 继续</span>
+          <h3>糖芯影像实验室</h3>
+          <p>推出面向新人的影像课程与设备支持，让更多普通人的故事有被完整讲述的机会。</p>
+        </div>
+        <div class="tl-empty"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="sec join" id="join">
+  <div class="wrap join-grid">
+    <div class="join-art reveal">
+      <svg viewBox="0 0 460 380" aria-hidden="true">
+        <defs>
+          <linearGradient id="jg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#fff" stop-opacity=".95"/>
+            <stop offset="1" stop-color="#c9efe7" stop-opacity=".7"/>
+          </linearGradient>
+        </defs>
+        <rect x="30" y="30" width="400" height="320" rx="26" fill="url(#jg1)"/>
+        <rect x="70" y="72" width="200" height="16" rx="8" fill="#ffd0da"/>
+        <rect x="70" y="104" width="150" height="11" rx="5.5" fill="#ffe3e8"/>
+        <rect x="70" y="126" width="172" height="11" rx="5.5" fill="#ffe3e8"/>
+        <rect x="70" y="168" width="320" height="106" rx="18" fill="#fff"/>
+        <circle cx="118" cy="221" r="22" fill="#ffc2d2"/>
+        <path d="M110 213v16l14-8-14-8Z" fill="#e8578a"/>
+        <rect x="156" y="204" width="180" height="12" rx="6" fill="#ffe0e6"/>
+        <rect x="156" y="226" width="128" height="10" rx="5" fill="#fff0f3"/>
+        <rect x="70" y="296" width="98" height="34" rx="17" fill="#e8578a"/>
+        <rect x="86" y="310" width="66" height="7" rx="3.5" fill="#fff"/>
+        <rect x="182" y="296" width="98" height="34" rx="17" fill="#fff" stroke="#ffd0da" stroke-width="1.5"/>
+        <rect x="198" y="310" width="66" height="7" rx="3.5" fill="#ffc2d2"/>
+        <g stroke="#3fae99" stroke-width="2.4" stroke-linecap="round" opacity=".7">
+          <path d="M298 300v20 M288 310h20"/>
+        </g>
+        <circle cx="388" cy="96" r="18" fill="#ffd166" opacity=".7"/>
+        <circle cx="360" cy="130" r="9" fill="#b8a7e8" opacity=".6"/>
+      </svg>
+    </div>
+    <div>
+      <span class="eyebrow reveal">加入糖芯</span>
+      <h2 class="reveal" style="margin-top:16px">把你的故事，放在糖芯的下一帧</h2>
+      <p class="reveal" style="margin-top:16px;font-size:15.5px">无论你刚刚拿起相机，还是已经拍了很久，糖芯都希望成为你安心发布作品的地方。这里不会有让人焦虑的对比，只有具体的支持与真诚的反馈。</p>
+      <ul class="join-list">
+        <li class="reveal"><span class="check"><svg viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></svg></span><span>免费创建创作者主页，作品永久存档与展示</span></li>
+        <li class="reveal"><span class="check"><svg viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></svg></span><span>编辑部一对一内容指导，每月开放申请</span></li>
+        <li class="reveal"><span class="check"><svg viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></svg></span><span>品牌合作撮合与收益透明结算，分成规则公开</span></li>
+        <li class="reveal"><span class="check"><svg viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></svg></span><span>设备借用与线下拍摄空间，向活跃创作者开放</span></li>
+      </ul>
+      <div class="hero-actions reveal">
+        <a href="#cta" class="btn btn-primary">立即申请加入</a>
+        <a href="#faq" class="btn btn-ghost">了解更多</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin:0 auto 46px">
+      <span class="eyebrow">常见问题</span>
+      <h2 style="margin-top:16px">关于糖芯，你可能想问的</h2>
+    </div>
+    <div class="faq" id="faqList">
+      <div class="faq-item">
+        <button class="faq-q">糖芯是什么？和普通视频平台有什么不同？<span class="ic"></span></button>
+        <div class="faq-a"><p>糖芯是一个以"生活影像"为核心的视频品牌与创作者社区。我们不以热度为唯一排序，而是通过编辑策展与社区推荐，让节奏更慢、情绪更细腻的短片也能被认真地观看。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">注册创作者需要满足什么条件？<span class="ic"></span></button>
+        <div class="faq-a"><p>年满 16 周岁、拥有至少一支原创视频作品即可申请。我们不设粉丝门槛，更看重作品的真实感与完成度。提交申请后，编辑部通常在 5 个工作日内给出答复。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">作品版权归谁所有？<span class="ic"></span></button>
+        <div class="faq-a"><p>版权始终归创作者本人所有。糖芯仅在获得你明确授权的前提下，将作品用于站内推荐与官方合辑展示，任何商业用途都会单独签署授权协议并单独结算。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">品牌合作与收益如何结算？<span class="ic"></span></button>
+        <div class="faq-a"><p>所有合作需求由糖芯团队统一对接，创作者可在后台查看需求明细与报价。结算按项目周期进行，平台服务费比例公开透明，并在每笔结算单中列明构成。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">手机上可以浏览和上传作品吗？<span class="ic"></span></button>
+        <div class="faq-a"><p>可以。糖芯网页版适配移动端浏览与上传，支持横竖屏作品。如需进行多轨剪辑与字幕制作，建议在桌面端使用以获得更完整的体验。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">如果我想参加线下活动怎么办？<span class="ic"></span></button>
+        <div class="faq-a"><p>糖芯每季度会在不同城市举办创作者见面会与放映会，活跃创作者可优先报名。活动信息会通过站内通知与邮件同步，名额有限，先到先得。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="cta">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <h2>下一支被看见的短片，也许就来自你</h2>
+      <p>现在进入糖芯，创建你的创作者主页。把那些认真生活过的证据，好好留下来。</p>
+      <div class="cta-actions">
+        <a href="#join" class="btn btn-primary">免费创建账号</a>
+        <a href="#works" class="btn btn-ghost">先看看别人的故事</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="mark">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 8.5A3.5 3.5 0 0 1 7.5 5h9A3.5 3.5 0 0 1 20 8.5v7A3.5 3.5 0 0 1 16.5 19h-9A3.5 3.5 0 0 1 4 15.5v-7Z" stroke="#fff" stroke-width="1.8"/>
+              <path d="M9.5 9.6v5.8l5-2.9-5-2.9Z" fill="#fff"/>
+            </svg>
+          </span>
+          糖芯
+        </div>
+        <p>甜蜜影像社区，记录每一份柔软时刻。<br>让普通人的故事，被稳稳地讲完。</p>
+        <div class="socials" style="margin-top:18px">
+          <a href="#" aria-label="微信"><svg viewBox="0 0 24 24"><path d="M9 4C5.1 4 2 6.6 2 9.8c0 1.8 1 3.4 2.6 4.5L4 16l1.9-.9c.6.2 1.3.3 2 .3h.4c-.1-.4-.2-.8-.2-1.2 0-2.9 2.8-5.2 6.3-5.2h.4C14.2 6 11.9 4 9 4Zm-2.4 3.4a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8Zm4.8 0a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8Z"/><path d="M22 14.6c0-2.5-2.4-4.5-5.4-4.5s-5.4 2-5.4 4.5 2.4 4.5 5.4 4.5c.6 0 1.2-.1 1.7-.2l1.4.7-.3-1.3c1.6-.9 2.6-2.2 2.6-3.7Zm-7.2-1a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6Zm3.6 0a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6Z"/></svg></a>
+          <a href="#" aria-label="视频号"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm-2 5.5 6 3.5-6 3.5v-7Z"/></svg></a>
+          <a href="#" aria-label="邮件"><svg viewBox="0 0 24 24"><path d="M3 6h18v12H3V6Zm2 1.6V17h14V7.6l-7 4.6-7-4.6Zm.6-.6 6.4 4.2L18.4 7H5.6Z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>产品</h4>
+        <a href="#works">精选作品</a>
+        <a href="#channels">内容频道</a>
+        <a href="#creators">创作者主页</a>
+        <a href="#join">上传作品</a>
+      </div>
+      <div class="foot-col">
+        <h4>社区</h4>
+        <a href="#creators">创作者计划</a>
+        <a href="#join">线下活动</a>
+        <a href="#faq">帮助中心</a>
+        <a href="#faq">内容规范</a>
+      </div>
+      <div class="foot-col">
+        <h4>关于</h4>
+        <a href="#about">品牌理念</a>
+        <a href="#faq">合作洽谈</a>
+        <a href="#faq">加入我们</a>
+        <a href="#cta">联系糖芯</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 糖芯 Tangxin Studio · 保留所有权利</span>
+      <span>隐私政策 · 用户协议 · 创作者公约</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Header scroll state ---------- */
+  var header = document.getElementById('siteHeader');
+  function onScroll(){
+    if(window.scrollY > 12){ header.classList.add('scrolled'); }
+    else{ header.classList.remove('scrolled'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---------- Mobile menu (simple anchor jump) ---------- */
+  var menuBtn = document.getElementById('menuBtn');
+  if(menuBtn){
+    menuBtn.addEventListener('click', function(){
+      var first = document.querySelector('.nav-links a');
+      if(first){
+        var target = document.querySelector('#about');
+        if(target){ target.scrollIntoView({behavior:'smooth'}); }
+      }
+    });
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    revealEls.forEach(function(el, i){
+      el.style.transitionDelay = (Math.min(i, 6) * 55) + 'ms';
+      io.observe(el);
+    });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---------- Works data + render ---------- */
+  var works = [
+    {
+      tag:'日常切片', title:'把周末过成一碗温热的粥', desc:'从清晨的窗光到傍晚的收碗声，一支关于放慢脚步的生活短片。',
+      author:'林小满', dur:'06:24', views:'12.4 万',
+      c1:'#ffe0e8', c2:'#ffc7d6', accent:'#e8578a', shape:'bowl'
+    },
+    {
+      tag:'厨房手记', title:'一盏茶的时间，做完一碟桂花糕', desc:'炉火、蒸汽与刀落案板的声响，被完整地保留在四分钟里。',
+      author:'周予安', dur:'04:12', views:'9.8 万',
+      c1:'#fff1e6', c2:'#ffd7c2', accent:'#f0a500', shape:'cup'
+    },
+    {
+      tag:'城市漫游', title:'雨天的旧城区，走路的声音很轻', desc:'一条被雨水泡软的老街，和那些仍然开着门的小店。',
+      author:'顾一川', dur:'08:40', views:'16.2 万',
+      c1:'#e6f0ff', c2:'#cfd9f2', accent:'#5b7bd5', shape:'city'
+    },
+    {
+      tag:'情绪短片', title:'给睡不着的夜晚一支安静的片子', desc:'用风声、钢琴与缓慢移动的镜头，陪你把这一天放下。',
+      author:'苏念', dur:'03:56', views:'21.7 万',
+      c1:'#efe9fb', c2:'#d8cdf2', accent:'#7a63c9', shape:'moon'
+    },
+    {
+      tag:'日常切片', title:'搬家那天，阳光正好落在纸箱上', desc:'没有旁白，只有纸箱摩擦地面的声音和一句轻轻的"到了"。',
+      author:'阿棠', dur:'05:18', views:'7.3 万',
+      c1:'#fff6e0', c2:'#ffe6b8', accent:'#e0a400', shape:'box'
+    },
+    {
+      tag:'厨房手记', title:'夏天第一杯手冲，从磨豆开始', desc:'把仪式感拆成八个步骤，每一个都可以被听见。',
+      author:'周予安', dur:'07:02', views:'11.1 万',
+      c1:'#e7f5f1', c2:'#c8ece3', accent:'#3fae99', shape:'beans'
+    }
+  ];
+
+  function thumbSVG(w){
+    var shape = '';
+    if(w.shape === 'bowl'){
+      shape = '<ellipse cx="160" cy="128" rx="72" ry="20" fill="#fff" opacity=".9"/>' +
+              '<path d="M88 128 h144 a72 60 0 0 1 -144 0Z" fill="#fff" opacity=".95"/>' +
+              '<ellipse cx="160" cy="122" rx="60" ry="14" fill="' + w.accent + '" opacity=".35"/>' +
+              '<path d="M150 96 q10 -18 22 -10" stroke="' + w.accent + '" stroke-width="3" fill="none" stroke-linecap="round" opacity=".5"/>';
+    } else if(w.shape === 'cup'){
+      shape = '<rect x="112" y="98" width="82" height="66" rx="12" fill="#fff"/>' +
+              '<path d="M194 116 h14 a14 14 0 0 1 0 28 h-14" fill="none" stroke="#fff" stroke-width="8"/>' +
+              '<rect x="124" y="112" width="58" height="10" rx="5" fill="' + w.accent + '" opacity=".45"/>' +
+              '<path d="M140 88 q6 -12 14 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" opacity=".8"/>';
+    } else if(w.shape === 'city'){
+      shape = '<rect x="80" y="110" width="42" height="64" rx="5" fill="#fff" opacity=".85"/>' +
+              '<rect x="132" y="86" width="52" height="88" rx="5" fill="#fff"/>' +
+              '<rect x="194" y="120" width="46" height="54" rx="5" fill="#fff" opacity=".8"/>' +
+              '<g fill="' + w.accent + '" opacity=".4"><rect x="146" y="100" width="10" height="10" rx="2"/><rect x="162" y="100" width="10" height="10" rx="2"/><rect x="146" y="118" width="10" height="10" rx="2"/><rect x="162" y="118" width="10" height="10" rx="2"/></g>' +
+              '<path d="M70 176 h180" stroke="#fff" stroke-width="3" opacity=".7" stroke-linecap="round"/>';
+    } else if(w.shape === 'moon'){
+      shape = '<circle cx="160" cy="128" r="50" fill="#fff" opacity=".92"/>' +
+              '<circle cx="182" cy="112" r="44" fill="' + w.c2 + '"/>' +
+              '<g fill="#fff" opacity=".9"><circle cx="104" cy="92" r="3"/><circle cx="212" cy="94" r="2.4"/><circle cx="120" cy="160" r="2"/><circle cx="204" cy="162" r="3"/></g>';
+    } else if(w.shape === 'box'){
+      shape = '<rect x="106" y="112" width="88" height="62" rx="6" fill="#fff"/>' +
+              '<path d="M106 128 h88" stroke="' + w.accent + '" stroke-width="3" opacity=".4"/>' +
+              '<path d="M150 112 v-18 M126 76 h48 a8 8 0 0 1 8 8 v10 h-64 v-10 a8 8 0 0 1 8 -8Z" fill="#fff" opacity=".9"/>';
+    } else {
+      shape = '<ellipse cx="140" cy="136" rx="26" ry="16" fill="#fff" transform="rotate(-24 140 136)"/>' +
+              '<ellipse cx="182" cy="118" rx="26" ry="16" fill="#fff" opacity=".85" transform="rotate(18 182 118)"/>' +
+              '<path d="M150 128 q16 -10 30 -14" stroke="' + w.accent + '" stroke-width="3" fill="none" stroke-linecap="round" opacity=".5"/>';
+    }
+    return '<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' +
+      '<defs><linearGradient id="g_' + w.shape + '" x1="0" y1="0" x2="1" y2="1">' +
+      '<stop offset="0" stop-color="' + w.c1 + '"/><stop offset="1" stop-color="' + w.c2 + '"/>' +
+      '</linearGradient></defs>' +
+      '<rect width="320" height="200" fill="url(#g_' + w.shape + ')"/>' +
+      '<circle cx="256" cy="44" r="58" fill="#fff" opacity=".22"/>' +
+      '<circle cx="58" cy="172" r="46" fill="' + w.accent + '" opacity=".12"/>' +
+      shape +
+      '<g fill="#fff" opacity=".7"><circle cx="52" cy="46" r="3"/><circle cx="278" cy="150" r="2.5"/><circle cx="230" cy="66" r="2"/></g>' +
+      '</svg>';
+  }
+
+  var grid = document.getElementById('workGrid');
+  if(grid){
+    works.forEach(function(w){
+      var card = document.createElement('article');
+      card.className = 'work-card reveal';
+      card.innerHTML =
+        '<div class="thumb">' + thumbSVG(w) +
+        '<div class="play"><span class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7Z"/></svg></span></div>' +
+        '</div>' +
+        '<div class="work-info">' +
+        '<span class="tag">' + w.tag + '</span>' +
+        '<h3>' + w.title + '</h3>' +
+        '<p>' + w.desc + '</p>' +
+        '<div class="work-meta"><span>' + w.author + ' · ' + w.views + ' 次观看</span>' +
+        '<span class="dur"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#9b8890" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="#9b8890" stroke-width="1.8" stroke-linecap="round"/></svg>' + w.dur + '</span></div>' +
+        '</div>';
+      grid.appendChild(card);
+    });
+
+    /* light-play interaction: clicking card toggles a soft highlight */
+    grid.addEventListener('click', function(e){
+      var card = e.target.closest('.work-card');
+      if(!card) return;
+      card.style.transform = 'translateY(-8px) scale(.985)';
+      setTimeout(function(){ card.style.transform = ''; }, 180);
+    });
+
+    /* re-observe injected cards */
+    var newReveal = Array.prototype.slice.call(grid.querySelectorAll('.reveal'));
+    if('IntersectionObserver' in window){
+      var io2 = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){ en.target.classList.add('in'); io2.unobserve(en.target); }
+        });
+      }, {threshold:0.1});
+      newReveal.forEach(function(el, i){
+        el.style.transitionDelay = (i * 60) + 'ms';
+        io2.observe(el);
+      });
+    } else {
+      newReveal.forEach(function(el){ el.classList.add('in'); });
+    }
+  }
+
+  /* ---------- FAQ accordion ---------- */
+  var faqList = document.getElementById('faqList');
+  if(faqList){
+    var items = Array.prototype.slice.call(faqList.querySelectorAll('.faq-item'));
+    items.forEach(function(item){
+      var btn = item.querySelector('.faq-q');
+      var panel = item.querySelector('.faq-a');
+      btn.addEventListener('click', function(){
+        var isOpen = item.classList.contains('open');
+        items.forEach(function(other){
+          if(other !== item){
+            other.classList.remove('open');
+            other.querySelector('.faq-a').style.maxHeight = null;
+          }
+        });
+        if(isOpen){
+          item.classList.remove('open');
+          panel.style.maxHeight = null;
+        } else {
+          item.classList.add('open');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+    window.addEventListener('resize', function(){
+      items.forEach(function(item){
+        if(item.classList.contains('open')){
+          var p = item.querySelector('.faq-a');
+          p.style.maxHeight = p.scrollHeight + 'px';
+        }
+      });
+    });
+  }
+
+  /* ---------- Smooth anchor for older browsers ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id.length > 1){
+        var target = document.querySelector(id);
+        if(target){
+          e.preventDefault();
+          var top = target.getBoundingClientRect().top + window.scrollY - 78;
+          window.scrollTo({top: top, behavior:'smooth'});
+        }
+      }
+    });
+  });
+
+})();
+</script>
+</body>
+  </html>
